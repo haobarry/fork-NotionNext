@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unknown-property */
-import CONFIG from './config'
 import { themeConsoleStyle } from '@/lib/themeConsoleStyle'
+import CONFIG from './config'
 
 const Style = () => {
   return <style jsx global>{`
@@ -487,6 +487,7 @@ const Style = () => {
       align-items: center;
       justify-content: center;
       transition: all .18s ease;
+      cursor:pointer;
     }
     #theme-fuwari .fuwari-social-btn:hover {
       transform: translateY(-1px);
@@ -611,4 +612,3 @@ const Style = () => {
 }
 
 export { Style }
-

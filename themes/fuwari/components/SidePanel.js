@@ -1,12 +1,12 @@
-import SmartLink from '@/components/SmartLink'
 import LazyImage from '@/components/LazyImage'
+import SmartLink from '@/components/SmartLink'
 import { siteConfig } from '@/lib/config'
 import { useGlobal } from '@/lib/global'
+import CONFIG from '../config'
 import AdCard from './AdCard'
 import AnalyticsCard from './AnalyticsCard'
 import Announcement from './Announcement'
 import ContactCard from './ContactCard'
-import CONFIG from '../config'
 import PluginCard from './PluginCard'
 import SocialButton from './SocialButton'
 import Toc from './Toc'
@@ -32,13 +32,18 @@ const SidePanel = props => {
 
   return (
     <aside className='space-y-4'>
+
+      {/* 这是顶部区域 */}
       <section className='fuwari-card fuwari-profile-card p-4'>
-        <SmartLink href={siteConfig('FUWARI_PROFILE_PATH', '/about', CONFIG)} className='fuwari-profile-link block mb-2.5'>
+        <SmartLink href={siteConfig('FUWARI_PROFILE_PATH', '/about', CONFIG)}
+          sstyle={'padding:1rem'}
+          className='fuwari-profile-link block mb-2.5'>
           <div className='fuwari-profile-thumb relative overflow-hidden rounded-2xl'>
             <LazyImage
-              src={siteInfo?.icon}
+              src={'/think.png'}
               alt={siteConfig('AUTHOR') || title}
               className='w-full aspect-square object-cover'
+
             />
             <span className='fuwari-profile-overlay' aria-hidden='true'>
               <i className='far fa-id-card' />
@@ -69,7 +74,7 @@ const SidePanel = props => {
         notice &&
         Object.keys(notice).length > 0 && (
           <Announcement post={notice} title={locale?.COMMON?.ANNOUNCEMENT || '公告'} className='p-5' />
-      )}
+        )}
 
       {siteConfig('FUWARI_WIDGET_LATEST_POSTS', true, CONFIG) && latestPosts.length > 0 && (
         <section className='fuwari-card p-5'>
@@ -138,4 +143,3 @@ const SidePanel = props => {
 }
 
 export default SidePanel
-
