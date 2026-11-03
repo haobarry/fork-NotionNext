@@ -14,10 +14,10 @@ import ArchiveList from './components/ArchiveList'
 import ArticleAdjacent from './components/ArticleAdjacent'
 import ArticleCopyright from './components/ArticleCopyright'
 import ArticleHeader from './components/ArticleHeader'
+import ArticleHeroCover from './components/ArticleHeroCover'
 import ArticleLock from './components/ArticleLock'
 import Footer from './components/Footer'
 import Header from './components/Header'
-import ArticleHeroCover from './components/ArticleHeroCover'
 import HeroBanner from './components/HeroBanner'
 import Pagination from './components/Pagination'
 import PostList from './components/PostList'
@@ -42,6 +42,8 @@ const getLocale = () => generateLocaleDict(siteConfig('LANG', 'zh-CN'))
 
 const shouldShowSidePanel = props => !shouldHideFuwariSidebar(props?.post)
 
+
+// 基本布局
 const LayoutBase = props => {
   const { children } = props
   const locale = getLocale()
@@ -101,6 +103,8 @@ const LayoutBase = props => {
 
 const LayoutIndex = props => <LayoutPostList {...props} />
 
+
+// 大部分展示文章列表的页面  比如文章分类或标签分类 下的文章列表页
 const LayoutPostList = props => {
   const locale = getLocale()
   const { category, tag } = props
@@ -131,6 +135,8 @@ const LayoutPostList = props => {
   )
 }
 
+
+// 文章页面
 const LayoutSlug = props => {
   const locale = getLocale()
   const { post, lock, validPassword, prev, next } = props
@@ -172,6 +178,8 @@ const LayoutSlug = props => {
   )
 }
 
+
+// 搜索页面
 const LayoutSearch = props => {
   const locale = getLocale()
   const router = useRouter()
@@ -211,7 +219,7 @@ const LayoutSearch = props => {
         posts.length > 0 ? (
           <div id='posts-wrapper'>
             {siteConfig('POST_LIST_STYLE', 'page', props.NOTION_CONFIG) ===
-            'page' ? (
+              'page' ? (
               <>
                 <PostList posts={posts} />
                 <Pagination page={props.page || 1} postCount={posts.length} />
@@ -234,13 +242,14 @@ const LayoutSearch = props => {
   )
 }
 
+//文章归档页面
 const LayoutArchive = props => {
   const locale = getLocale()
   return (
     <>
       <div className='fuwari-card p-6 mb-4'>
         <p className='text-sm uppercase tracking-widest text-[var(--fuwari-muted)] mb-2'>
-          {locale?.NAV?.ARCHIVE || '归档'}
+          {locale?.NAV?.ARCHIVE || '文章归档'}
         </p>
         <h1 className='text-3xl font-bold leading-tight'>{locale?.NAV?.ARCHIVE || '归档'}</h1>
       </div>
@@ -249,6 +258,8 @@ const LayoutArchive = props => {
   )
 }
 
+
+// 404页
 const Layout404 = () => {
   const locale = getLocale()
   return (
@@ -262,6 +273,7 @@ const Layout404 = () => {
   )
 }
 
+// 文章分类显示区域
 const LayoutCategoryIndex = props => {
   const locale = getLocale()
   const { categoryOptions } = props
@@ -282,6 +294,8 @@ const LayoutCategoryIndex = props => {
   )
 }
 
+
+// 标签云的显示
 const LayoutTagIndex = props => {
   const locale = getLocale()
   const { tagOptions } = props
@@ -314,4 +328,3 @@ export {
   LayoutTagIndex,
   CONFIG as THEME_CONFIG
 }
-

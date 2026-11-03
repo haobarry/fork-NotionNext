@@ -1,7 +1,7 @@
+import AnalyticsBusuanzi from '@/components/AnalyticsBusuanzi'
 import { BeiAnGongAn } from '@/components/BeiAnGongAn'
 import BeiAnSite from '@/components/BeiAnSite'
 import { siteConfig } from '@/lib/config'
-import AnalyticsBusuanzi from '@/components/AnalyticsBusuanzi'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -17,7 +17,8 @@ const Footer = () => {
           <i className='far fa-copyright mr-1' />
           {copyrightDate} {author}. All Rights Reserved.
         </p>
-        <p className='mt-1'>
+        {/* 注释掉网站的建立 */}
+        {/* <p className='mt-1'>
           Powered by{' '}
           <a
             href='https://github.com/notionnext-org/NotionNext'
@@ -30,7 +31,7 @@ const Footer = () => {
           <span className='font-semibold text-[var(--fuwari-primary)]'>
             Fuwari
           </span>
-        </p>
+        </p> */}
         <p className='mt-2 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-xs [&_a]:fuwari-link [&_br]:hidden'>
           <BeiAnSite />
           <BeiAnGongAn className='inline-flex items-center justify-center' />
@@ -42,4 +43,3 @@ const Footer = () => {
 }
 
 export default Footer
-

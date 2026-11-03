@@ -28,7 +28,7 @@ const CONFIG = {
   /** 无文章封面时，是否用站点横幅图（HOME_BANNER_IMAGE）作默认图 */
   FUWARI_POST_LIST_COVER_DEFAULT: false,
   /** 封面悬停轻微放大 */
-  FUWARI_POST_LIST_COVER_HOVER_ENLARGE: true,
+  FUWARI_POST_LIST_COVER_HOVER_ENLARGE: false,
   /** 显示摘要（有 summary 时） */
   FUWARI_POST_LIST_SUMMARY: true,
   /** 卡片内显示标签 */
@@ -72,7 +72,7 @@ const CONFIG = {
   /** 侧栏头像/昵称下的「个人页」链接路径 */
   FUWARI_PROFILE_PATH: '/about',
   /** 联系/社群入口卡片 */
-  FUWARI_WIDGET_CONTACT: true,
+  FUWARI_WIDGET_CONTACT: false,
   /** 侧栏广告位总开关 */
   FUWARI_WIDGET_AD: false,
   /** 侧栏广告位内：是否渲染 WWAds */
@@ -92,7 +92,7 @@ const CONFIG = {
   /** 文章页右侧浮动区：跳转评论区按钮 */
   FUWARI_WIDGET_TO_COMMENT: true,
   /** 文章页右侧浮动区：深色模式切换 */
-  FUWARI_WIDGET_DARK_MODE: true,
+  FUWARI_WIDGET_DARK_MODE: false,
   /** 文章页目录：桌面在侧栏；小屏为浮动按钮抽屉（RightFloatArea） */
   FUWARI_ARTICLE_TOC: true,
 
@@ -102,11 +102,11 @@ const CONFIG = {
   /** 正面标题 */
   FUWARI_CONTACT_TITLE: '社区',
   /** 正面说明文案 */
-  FUWARI_CONTACT_DESCRIPTION: '欢迎交流与反馈',
+  FUWARI_CONTACT_DESCRIPTION: '欢迎交流',
   /** 正面右上角徽标 */
   FUWARI_CONTACT_FRONT_BADGE: 'Community',
   /** 跳转 URL（外链或站内路径） */
-  FUWARI_CONTACT_URL: 'https://docs.tangly1024.com/article/chat-community',
+  FUWARI_CONTACT_URL: 'https://',
   /** 正面行动文案（如「联系我们 →」） */
   FUWARI_CONTACT_TEXT: '查看',
   /** 是否使用正反面翻转卡片 */
@@ -122,7 +122,7 @@ const CONFIG = {
   // 全站动效（按需开启，可能影响性能）
   // ---------------------------------------------------------------------------
   /** Lenis 平滑滚动 */
-  FUWARI_EFFECT_LENIS: false,
+  FUWARI_EFFECT_LENIS: true,
   /** 自定义光标圆点 */
   FUWARI_EFFECT_CURSOR_DOT: false,
 
@@ -134,7 +134,7 @@ const CONFIG = {
   /** 文首：日期、分类、标签等元信息 */
   FUWARI_ARTICLE_META: true,
   /** 分享条 */
-  FUWARI_ARTICLE_SHARE: true,
+  FUWARI_ARTICLE_SHARE: false,
   /** 文章版权声明：true 全部显示；false 全部关闭；custom 仅填写 copyright 时显示 */
   FUWARI_ARTICLE_COPYRIGHT: true,
   /** 文末评论区（需在 `blog.config.js` 配置任一种评论服务，如 COMMENT_GISCUS_REPO / COMMENT_TWIKOO_ENV_ID 等，否则不渲染） */

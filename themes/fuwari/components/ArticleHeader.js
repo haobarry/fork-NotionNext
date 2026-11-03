@@ -41,7 +41,8 @@ const ArticleHeader = ({ post }) => {
           {post.lastEditedDay && (
             <>
               <span>·</span>
-              <SmartLink href={getArchiveHref(post.lastEditedDay, router)} className='fuwari-link'>{post.lastEditedDay}</SmartLink>
+              {/* 注释掉最后编辑时间 */}
+              {/* <SmartLink href={getArchiveHref(post.lastEditedDay, router)} className='fuwari-link'>{post.lastEditedDay}</SmartLink> */}
             </>
           )}
           {post.category && (
@@ -72,4 +73,3 @@ const ArticleHeader = ({ post }) => {
 }
 
 export default ArticleHeader
-
